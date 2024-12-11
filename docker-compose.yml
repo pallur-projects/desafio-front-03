@@ -1,0 +1,14 @@
+services:
+  apache:
+    build: .
+    container_name: desafio-front
+    ports:
+      - "8008:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
